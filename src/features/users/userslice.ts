@@ -1,4 +1,4 @@
-// src/features/users/userSlice.ts
+
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 interface User {

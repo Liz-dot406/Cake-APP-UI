@@ -16,7 +16,7 @@ import {
   Line,
 } from "recharts";
 
-// Color palettes
+
 const STATUS_COLORS = ["#6366F1", "#EC4899", "#FBBF24", "#10B981", "#F87171"];
 const PIE_COLORS = ["#3B82F6", "#9333EA", "#F472B6", "#FBBF24", "#34D399"];
 
@@ -27,7 +27,7 @@ const AnalyticsPage: React.FC = () => {
   if (ordersLoading || cakesLoading) return <p className="text-gray-500">Loading analytics...</p>;
   if (ordersError || cakesError) return <p className="text-red-500">Failed to load analytics.</p>;
 
-  // Orders by status
+
   const statusCounts = orders?.reduce((acc: any, order) => {
     acc[order.Status] = (acc[order.Status] || 0) + 1;
     return acc;
@@ -39,7 +39,7 @@ const AnalyticsPage: React.FC = () => {
     color: STATUS_COLORS[i % STATUS_COLORS.length],
   }));
 
-  // Orders over time (grouped by date)
+  
   const ordersByDate: { [key: string]: number } = {};
   orders?.forEach((order) => {
     const date = order.DeliveryDate.split("T")[0];
@@ -56,7 +56,7 @@ const AnalyticsPage: React.FC = () => {
     <div className="p-6 bg-gray-50 min-h-screen space-y-6">
       <h1 className="text-3xl font-bold text-gray-800">Analytics Dashboard</h1>
 
-      {/* Summary Cards */}
+     
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         <div className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-5 rounded-xl shadow-lg">
           <h3 className="text-lg font-semibold">Total Orders</h3>
@@ -68,7 +68,7 @@ const AnalyticsPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Orders Trend Line Chart */}
+      
       <div className="bg-white rounded-xl shadow-lg p-5">
         <h2 className="text-xl font-semibold mb-4">Orders Trend Over Time</h2>
         <ResponsiveContainer width="100%" height={300}>
@@ -82,7 +82,7 @@ const AnalyticsPage: React.FC = () => {
         </ResponsiveContainer>
       </div>
 
-      {/* Orders by Status Bar Chart */}
+      
       <div className="bg-white rounded-xl shadow-lg p-5">
         <h2 className="text-xl font-semibold mb-4">Orders by Status</h2>
         <ResponsiveContainer width="100%" height={300}>
@@ -100,7 +100,7 @@ const AnalyticsPage: React.FC = () => {
         </ResponsiveContainer>
       </div>
 
-      {/* Total Cakes Pie Chart */}
+      
       <div className="bg-white rounded-xl shadow-lg p-5">
         <h2 className="text-xl font-semibold mb-4">Cake Inventory</h2>
         <ResponsiveContainer width="100%" height={250}>

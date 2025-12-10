@@ -1,4 +1,4 @@
-// drawerData.ts
+
 import { FaUser, FaBirthdayCake, FaClipboardList, FaShoppingCart } from "react-icons/fa";
 import { type IconType } from "react-icons";
 

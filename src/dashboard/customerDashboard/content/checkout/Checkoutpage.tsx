@@ -23,7 +23,7 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({
     "Cash" | "Mobile" | "Card"
   >("Cash");
 
-  // Ensure Size is valid
+ 
   const getValidSize = (size?: string): "Small" | "Medium" | "Large" => {
     const validSizes = ["Small", "Medium", "Large"] as const;
     return validSizes.includes(size as any) ? (size as "Small" | "Medium" | "Large") : "Medium";
@@ -76,7 +76,7 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({
     <div className="p-6">
       <h1 className="text-2xl font-bold text-pink-700 mb-6">Checkout</h1>
 
-      {/* Delivery Date Picker */}
+      
       <div className="mb-4">
         <label className="block mb-2 font-semibold">Select Delivery Date:</label>
         <input
@@ -87,7 +87,6 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({
         />
       </div>
 
-      {/* Payment Method Selection */}
       <div className="mb-4">
         <label className="block mb-2 font-semibold">Select Payment Method:</label>
         <select
@@ -101,7 +100,7 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({
         </select>
       </div>
 
-      {/* Cart Items */}
+      
       <div className="space-y-4">
         {cart.map((item) => (
           <div
@@ -124,14 +123,13 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({
         ))}
       </div>
 
-      {/* Total Amount */}
       <div className="mt-6 p-4 border rounded bg-gray-100">
         <p className="text-lg font-bold">
           Total Amount: Ksh {cart.reduce((sum, item) => sum + item.price, 0)}
         </p>
       </div>
 
-      {/* Confirm Checkout */}
+      
       <button
         className="mt-4 bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded w-full"
         onClick={handleCheckout}
@@ -140,7 +138,7 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({
         {isLoading ? "Placing Order..." : "Confirm Checkout"}
       </button>
 
-      {/* Clear Cart */}
+      
       <button
         onClick={clearCart}
         className="mt-2 w-full bg-gray-500 text-white px-4 py-2 rounded"

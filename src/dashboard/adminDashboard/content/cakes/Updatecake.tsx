@@ -35,11 +35,11 @@ export const UpdateCakeModal = ({ selectedCake, refetchCakes }: UpdateCakeModalP
     ) as any, 
     defaultValues: selectedCake
       ? {
-          name: selectedCake.name,
+          name: selectedCake.cakeName,
           description: selectedCake.description,
           price: selectedCake.price,
           available: selectedCake.available,
-          image: selectedCake.image ?? null,
+          image: selectedCake.imageURL?? null,
         }
       : undefined,
   });
@@ -48,11 +48,11 @@ export const UpdateCakeModal = ({ selectedCake, refetchCakes }: UpdateCakeModalP
   useEffect(() => {
     if (selectedCake) {
       reset({
-        name: selectedCake.name,
+        name: selectedCake.cakeName,
         description: selectedCake.description,
         price: selectedCake.price,
         available: selectedCake.available,
-        image: selectedCake.image ?? null,
+        image: selectedCake.imageURL?? null,
       });
     }
   }, [selectedCake, reset]);
@@ -65,7 +65,7 @@ export const UpdateCakeModal = ({ selectedCake, refetchCakes }: UpdateCakeModalP
       const payload = {
         ...data,
         image: data.image ?? undefined,
-        cake_Id: selectedCake.cake_Id,
+        cake_Id: selectedCake.cakeId,
       };
 
       await updateCake(payload).unwrap();

@@ -11,7 +11,6 @@ export const LoginForm: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // ✅ Clear form every time component mounts
   useEffect(() => {
     setEmail("");
     setPassword("");
@@ -25,7 +24,7 @@ export const LoginForm: React.FC = () => {
     try {
       await dispatch(login(email, password) as any);
 
-      // ✅ Clear form after successful login
+     
       setEmail("");
       setPassword("");
 
@@ -39,7 +38,7 @@ export const LoginForm: React.FC = () => {
     <form
       onSubmit={handleSubmit}
       className="max-w-md mx-auto p-6 mt-10 bg-white rounded shadow"
-      autoComplete="off" // Prevent browser autofill
+      autoComplete="off" 
     >
       <h2 className="text-2xl font-bold text-pink-700 mb-4">Login</h2>
 

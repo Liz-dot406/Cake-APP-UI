@@ -1,4 +1,4 @@
-// src/dashboard/customerDashboard/content/cakes/placeorders.tsx
+
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -33,7 +33,7 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ cake, quantity, onClose, setCar
       return;
     }
 
-    // Add to cart before checkout
+    
     setCart((prev) => {
       if (prev.find((c) => c.cakeId === cake.cakeId)) return prev;
       return [...prev, cake];
@@ -65,12 +65,11 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ cake, quantity, onClose, setCar
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4 z-50">
       <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg">
 
-        {/* TITLE ONLY: Cake name */}
         <h2 className="text-xl font-bold mb-4 text-pink-700">
           Order: {cake.cakeName}
         </h2>
 
-        {/* SIZE */}
+       
         <label className="block mb-2 font-semibold">Select Size:</label>
         <select
           className="w-full border p-2 rounded mb-4"
@@ -82,7 +81,7 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ cake, quantity, onClose, setCar
           <option value="Large">Large</option>
         </select>
 
-        {/* CUSTOM MESSAGE */}
+        
         <label className="block mb-2 font-semibold">Custom Message:</label>
         <input
           type="text"
@@ -92,7 +91,7 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ cake, quantity, onClose, setCar
           placeholder="Optional"
         />
 
-        {/* DELIVERY DATE */}
+        
         <label className="block mb-2 font-semibold">Delivery Date:</label>
         <input
           type="date"
@@ -101,12 +100,12 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ cake, quantity, onClose, setCar
           onChange={(e) => setDeliveryDate(e.target.value)}
         />
 
-        {/* PRICE */}
+        
         <p className="font-bold text-lg text-pink-600 mb-4">
           Total: Ksh {cake.price * quantity}
         </p>
 
-        {/* BUTTONS */}
+       
         <div className="flex justify-between">
           <button
             onClick={onClose}

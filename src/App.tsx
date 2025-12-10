@@ -59,7 +59,7 @@ const clearCart = () => setCart([]);
     { path: "/verification", element: <Verification  /> },
     { path: "/footer", element: <Footer/> },
 
-    // Admin Dashboard
+    
     {
         path: "/admin/dashboard",
   element: <AdminDashboard />,
@@ -89,7 +89,6 @@ const clearCart = () => setCart([]);
       ],
     },
 
-    // Customer Dashboard
     {
        path: "/customer/dashboard",
   element: <CustomerDashboard />,

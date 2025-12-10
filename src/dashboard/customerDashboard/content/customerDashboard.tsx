@@ -5,12 +5,12 @@ import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import type { RootState } from "../../../app/store"; // adjust path if needed
+import type { RootState } from "../../../app/store"; 
 
 const CustomerDashboard = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  // Optional: check if the current user is a customer
+  
   const isCustomer = useSelector(
     (state: RootState) => state.user.user?.role === "customer"
   );
@@ -23,7 +23,7 @@ const CustomerDashboard = () => {
     <div className="bg-rose-50 min-h-screen">
       <Navbar />
 
-      {/* Top Bar */}
+     
       <div className="flex px-4 py-4 bg-pink-200 items-center shadow-md">
         <button
           className="mr-4 text-pink-800 text-2xl lg:hidden"
@@ -37,7 +37,7 @@ const CustomerDashboard = () => {
       </div>
 
       <div className="flex">
-        {/* Sidebar */}
+        
         <aside
           className={`fixed top-0 z-40 w-64 bg-gradient-to-b from-pink-100 via-rose-50 to-white border-r-4 border-amber-200
             ${drawerOpen ? "" : "hidden"} lg:static lg:block lg:w-64 shadow-md`}
@@ -54,7 +54,7 @@ const CustomerDashboard = () => {
           </div>
         </aside>
 
-        {/* Main Content */}
+        
         <main className="flex-1 bg-white rounded-tl-3xl shadow-inner p-6">
           <Outlet />
         </main>

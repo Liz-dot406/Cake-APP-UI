@@ -53,7 +53,7 @@ export default function CakesPage() {
 
   return (
     <div className="p-4">
-      {/* Add Cake Button */}
+     
       <div className="flex justify-center mb-6 mt-3">
         <button
           className="btn bg-pink-600 text-white hover:bg-pink-700 border border-pink-500 rounded-lg px-4 py-2 text-lg font-semibold"
@@ -63,7 +63,7 @@ export default function CakesPage() {
         </button>
       </div>
 
-      {/* Modals */}
+      
       <CreateCakeModal refetchCakes={refetch} />
       <UpdateCakeModal selectedCake={selectedCake} refetchCakes={refetch} />
       {cakeToDelete && (
@@ -76,7 +76,7 @@ export default function CakesPage() {
         />
       )}
 
-      {/* Loading/Error */}
+     
       {isLoading && <p className="text-center mt-4">Loading cakes...</p>}
       {error && (
         <p className="text-red-500 text-center mt-4">
@@ -84,13 +84,12 @@ export default function CakesPage() {
         </p>
       )}
 
-      {/* Cakes Grid */}
       {!isLoading && cakesData && cakesData.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {cakesData.map((cake) => {
             const imageSrc = getCakeImage(cake.imageURL);
 
-            // Debug log
+           
             console.log("Cake:", cake.cakeName, "imageURL:", cake.imageURL, "imageSrc:", imageSrc);
 
             return (
@@ -98,10 +97,10 @@ export default function CakesPage() {
                 key={cake.cakeId}
                 className="border rounded-lg shadow hover:shadow-lg hover:scale-105 transition transform p-4 flex flex-col items-center bg-white"
               >
-                {/* Cake Image */}
+               
                 <img src={imageSrc} alt={cake.cakeName} className="w-full h-40 object-cover rounded mb-2" />
 
-                {/* Cake Info */}
+                
                 <h2 className="text-lg font-semibold text-center text-pink-700">{cake.cakeName}</h2>
                 {cake.flavorsUsed ? (
                   <p className="text-gray-600 text-sm text-center line-clamp-2">Flavors: {cake.flavorsUsed}</p>
@@ -118,7 +117,7 @@ export default function CakesPage() {
                   {cake.isactive ? "Available" : "Unavailable"}
                 </span>
 
-                {/* Actions */}
+                
                 <div className="flex gap-2 mt-4">
                   <button
                     className="btn btn-sm bg-pink-600 hover:bg-pink-700 text-white flex items-center justify-center"

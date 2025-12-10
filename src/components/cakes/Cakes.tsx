@@ -17,7 +17,7 @@ export const Cakes = () => {
       className="min-h-screen bg-pink-50 py-20 px-6 lg:px-20"
     >
       <div className="max-w-7xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-10">
-        {/* Section Title */}
+        
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-pink-800 mb-3">Our Signature Cakes</h1>
           <p className="text-gray-700 max-w-2xl mx-auto">
@@ -25,7 +25,7 @@ export const Cakes = () => {
           </p>
         </div>
 
-        {/* Cakes Grid */}
+      
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {cakes.map((cake) => (
             <div

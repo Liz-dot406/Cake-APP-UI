@@ -19,7 +19,7 @@ export const AdminDrawer = () => {
 
   return (
     <div className="bg-pink-200 h-full relative">
-      {/* Profile Section */}
+     
       <div
         className="flex items-center space-x-3 p-4 cursor-pointer hover:bg-pink-300 transition"
         onClick={handleProfileToggle}
@@ -35,7 +35,7 @@ export const AdminDrawer = () => {
         </div>
       </div>
 
-      {/* Drawer Menu */}
+   
       <ul className="mt-4">
         {adminDrawerData.map((item) => {
           const Icon = item.icon;
@@ -53,11 +53,10 @@ export const AdminDrawer = () => {
         })}
       </ul>
 
-      {/* Profile Modal */}
       {profileOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
           <div className="bg-white rounded-xl shadow-lg p-6 w-80 relative flex flex-col items-center">
-            {/* Close Button */}
+            
             <button
               className="absolute top-3 right-3 text-pink-700 text-2xl font-bold hover:text-pink-900 transition"
               onClick={handleProfileToggle}
@@ -65,7 +64,7 @@ export const AdminDrawer = () => {
               &times;
             </button>
 
-            {/* Profile Image */}
+           
             <div className="relative">
               <img
                 src={adminImg}
@@ -74,14 +73,14 @@ export const AdminDrawer = () => {
               />
             </div>
 
-            {/* Profile Info */}
+           
             <h2 className="mt-4 text-xl font-bold text-pink-800">Elizabeth Njoki</h2>
             <p className="text-pink-600">Administrator</p>
             <p className="mt-2 text-center text-gray-600 text-sm">
               njokimunywa@gmail.com
             </p>
 
-            {/* Logout Button */}
+            
             <div className="mt-4 w-full flex justify-center">
               <button
                 onClick={handleLogout}

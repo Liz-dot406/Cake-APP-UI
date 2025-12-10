@@ -68,7 +68,7 @@ export const Login = () => {
 
       toast.success(response.message);
       dispatch(loginSuccess(response));
-      reset(); // Clear form after successful login
+      reset(); 
 
       if (response.user.role === "admin") {
         navigate("/admin/dashboard");

@@ -31,19 +31,19 @@ export const usersAPI = createApi({
   }),
   tagTypes: ['User'],
   endpoints: (builder) => ({
-    // GET USERS
+   
     getUsers: builder.query<Typeuser[], void>({
       query: () => '/users',
       providesTags: ['User'],
     }),
-    // GET USER BY ID
+    
 getUserById: builder.query<Typeuser, number>({
   query: (userId) => `/users/${userId}`,
   providesTags: ['User'],
 }),
 
 
-    // CREATE USER
+    
     createUser: builder.mutation<Typeuser, Partial<Typeuser>>({
       query: (newUser) => ({
         url: '/users/register',
@@ -53,7 +53,7 @@ getUserById: builder.query<Typeuser, number>({
       invalidatesTags: ['User'],
     }),
 
-    // UPDATE USER
+   
     updateUser: builder.mutation<Typeuser, Partial<Typeuser> & { user_Id: number }>({
       query: (updatedUser) => ({
         url: `/users/${updatedUser.user_Id}`,
@@ -63,7 +63,7 @@ getUserById: builder.query<Typeuser, number>({
       invalidatesTags: ['User'],
     }),
 
-    // DELETE USER
+    
     deleteUser: builder.mutation<{ success: boolean; user_Id: number }, number>({
       query: (user_Id) => ({
         url: `/users/${user_Id}`,

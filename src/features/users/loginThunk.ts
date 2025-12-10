@@ -1,4 +1,4 @@
-// src/features/users/loginThunk.ts
+
 import { loginUser } from "./userslice";
 import type { AppDispatch } from "../../app/store";
 
@@ -14,7 +14,6 @@ export const login = (email: string, password: string) => async (dispatch: AppDi
 
     if (!res.ok) throw new Error(data.message || "Login failed");
 
-    // Map API user_Id → slice userid
     dispatch(
       loginUser({
         userid: data.user.user_Id,

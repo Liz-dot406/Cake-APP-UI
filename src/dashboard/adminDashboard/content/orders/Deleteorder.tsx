@@ -1,10 +1,10 @@
-// src/components/admin/DeleteOrderButton.tsx
+
 import React from "react";
 import { useDeleteOrderMutation } from "../../../../features/orders/ordersAPI";
 
 type DeleteOrderButtonProps = {
   orderId: number;
-  onDeleted?: () => void; // optional callback after deletion
+  onDeleted?: () => void; 
 };
 
 const DeleteOrderButton: React.FC<DeleteOrderButtonProps> = ({ orderId, onDeleted }) => {

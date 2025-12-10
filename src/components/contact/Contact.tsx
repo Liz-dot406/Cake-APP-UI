@@ -28,7 +28,7 @@ const Contact = () => {
 
   const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
     try {
-      console.log("Form Submitted:", data); // Replace with API call
+      console.log("Form Submitted:", data); 
       toast.success("Message sent successfully!");
       reset();
     } catch {
@@ -43,12 +43,12 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col items-center justify-center py-20 px-4 bg-gradient-to-br from-pink-50 via-rose-50 to-amber-50">
-      {/* Contact Form Card */}
+      
       <div className="w-full max-w-2xl my-20 p-10 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-md border border-rose-100 transform transition hover:scale-105">
         <h2 className="text-3xl font-bold mb-6 text-center text-pink-700">Contact Us</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* First & Last Name */}
+        
           <div className="flex gap-4 flex-col sm:flex-row">
             <div className={inputWrapperClass}>
               <AiOutlineUser className={iconClass} />
@@ -63,27 +63,26 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Email */}
+          
           <div className={inputWrapperClass}>
             <AiOutlineMail className={iconClass} />
             <input type="email" placeholder="Email Address" {...register("email")} className={inputClass(errors.email?.message)} />
             {errors.email && <span className="text-rose-600 text-sm">{errors.email.message}</span>}
           </div>
 
-          {/* Subject */}
+          
           <div className={inputWrapperClass}>
             <AiOutlineMessage className={iconClass} />
             <input type="text" placeholder="Subject" {...register("subject")} className={inputClass(errors.subject?.message)} />
             {errors.subject && <span className="text-rose-600 text-sm">{errors.subject.message}</span>}
           </div>
 
-          {/* Message */}
           <div className={inputWrapperClass}>
             <textarea rows={5} placeholder="Your Message" {...register("message")} className={inputClass(errors.message?.message)} />
             {errors.message && <span className="text-rose-600 text-sm">{errors.message.message}</span>}
           </div>
 
-          {/* Submit Button */}
+         
           <button
             type="submit"
             disabled={isSubmitting}
@@ -94,7 +93,7 @@ const Contact = () => {
         </form>
       </div>
 
-      {/* Contact Info */}
+      
       <div className="mt-8 text-center">
         <h6 className="text-pink-700 font-semibold mb-1">Contacts</h6>
         <p className="text-pink-600">info@cakeapp.com</p>

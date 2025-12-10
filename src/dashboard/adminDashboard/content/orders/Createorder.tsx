@@ -1,10 +1,9 @@
 
-// src/components/admin/CreateOrderForm.tsx
 import React, { useState } from "react";
 import { useCreateOrderMutation } from "../../../../features/orders/ordersAPI";
 
 type CreateOrderFormProps = {
-  onSuccess?: () => void; // optional callback after order is created
+  onSuccess?: () => void; 
 };
 
 const CreateOrderForm: React.FC<CreateOrderFormProps> = ({ onSuccess }) => {
@@ -13,6 +12,7 @@ const CreateOrderForm: React.FC<CreateOrderFormProps> = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
     userid: 0,
     DesignId: 0,
+    CakeID: 0,
     Size: "Small" as "Small" | "Medium" | "Large",
     Flavor: "",
     Message: "",
@@ -21,6 +21,8 @@ const CreateOrderForm: React.FC<CreateOrderFormProps> = ({ onSuccess }) => {
     ExtendedDescription: "",
     SampleImages: "",
     ColorPreferences: "",
+     Price: 0, 
+     Status: "Pending"
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -40,6 +42,7 @@ const CreateOrderForm: React.FC<CreateOrderFormProps> = ({ onSuccess }) => {
       setFormData({
         userid: 0,
         DesignId: 0,
+        CakeID: 0,
         Size: "Small",
         Flavor: "",
         Message: "",
@@ -48,6 +51,8 @@ const CreateOrderForm: React.FC<CreateOrderFormProps> = ({ onSuccess }) => {
         ExtendedDescription: "",
         SampleImages: "",
         ColorPreferences: "",
+         Price: 0, 
+         Status: "Pending"
       });
       if (onSuccess) onSuccess();
     } catch (error) {

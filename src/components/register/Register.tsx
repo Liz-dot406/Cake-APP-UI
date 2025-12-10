@@ -56,7 +56,7 @@ export const Register = () => {
 
   return (
     <div className="bg-gradient-to-br from-pink-50 via-rose-50 to-amber-50 min-h-screen py-20 px-4">
-      {/* Registration Card Container */}
+    
       <div className="flex justify-center">
         <div className="w-full max-w-lg my-20">
           <div className="p-10 rounded-3xl shadow-2xl bg-white/90 backdrop-blur-md border border-rose-100 transform transition hover:scale-105">
@@ -64,35 +64,35 @@ export const Register = () => {
             <p className="text-center text-rose-400 mb-6 font-medium">Join Bakers House and start baking happiness!</p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              {/* Name */}
+              
               <div className={inputWrapperClass}>
                 <AiOutlineUser className={iconClass} />
                 <input type="text" {...register("name")} placeholder="Name" className={inputClass(errors.name?.message)} />
                 {errors.name && <span className="text-rose-600 text-sm">{errors.name.message}</span>}
               </div>
 
-              {/* Email */}
+              
               <div className={inputWrapperClass}>
                 <AiOutlineMail className={iconClass} />
                 <input type="email" {...register("email")} placeholder="Email" className={inputClass(errors.email?.message)} />
                 {errors.email && <span className="text-rose-600 text-sm">{errors.email.message}</span>}
               </div>
 
-              {/* Phone */}
+              
               <div className={inputWrapperClass}>
                 <AiOutlinePhone className={iconClass} />
                 <input type="text" {...register("phone")} placeholder="Phone Number" className={inputClass(errors.phone?.message)} />
                 {errors.phone && <span className="text-rose-600 text-sm">{errors.phone.message}</span>}
               </div>
 
-              {/* Address */}
+          
               <div className={inputWrapperClass}>
                 <AiOutlineHome className={iconClass} />
                 <input type="text" {...register("address")} placeholder="Address" className={inputClass(errors.address?.message)} />
                 {errors.address && <span className="text-rose-600 text-sm">{errors.address.message}</span>}
               </div>
 
-              {/* Password */}
+           
               <div className={inputWrapperClass}>
                 <AiOutlineLock className={iconClass} />
                 <input type={showPassword ? "text" : "password"} {...register("password")} placeholder="Password" className={inputClass(errors.password?.message)} />
@@ -100,7 +100,7 @@ export const Register = () => {
                 {errors.password && <span className="text-rose-600 text-sm">{errors.password.message}</span>}
               </div>
 
-              {/* Confirm Password */}
+              
               <div className={inputWrapperClass}>
                 <AiOutlineLock className={iconClass} />
                 <input type={showConfirm ? "text" : "password"} {...register("confirmPassword")} placeholder="Confirm Password" className={inputClass(errors.confirmPassword?.message)} />
@@ -108,7 +108,7 @@ export const Register = () => {
                 {errors.confirmPassword && <span className="text-rose-600 text-sm">{errors.confirmPassword.message}</span>}
               </div>
 
-              {/* Submit Button */}
+              
               <button type="submit" disabled={isLoading} className="w-full mt-6 py-3 bg-rose-600 hover:bg-rose-700 text-white text-lg rounded-xl shadow-md transition transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">
                 {isLoading ? <> <span className="loading loading-spinner text-white mr-2" /> Please wait... </> : "Register"}
               </button>

@@ -47,7 +47,7 @@ const currentUserId = 1;
             key={cake.cakeId}
             className="border rounded shadow-md p-4 flex flex-col justify-between"
           >
-            {/*  Removed ALL images */}
+            
             
             <h2 className="text-lg font-bold">{cake.cakeName}</h2>
             <p className="text-sm">Flavor: {cake.flavorsUsed}</p>
@@ -63,7 +63,7 @@ const currentUserId = 1;
         ))}
       </div>
 
-      {/* Cart Preview */}
+      
       <div className="fixed bottom-4 right-4 bg-white p-4 rounded shadow-md w-72">
         <h2 className="text-lg font-bold mb-2">Cart ({cart.length})</h2>
 

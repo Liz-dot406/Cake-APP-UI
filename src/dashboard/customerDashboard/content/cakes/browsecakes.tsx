@@ -22,10 +22,10 @@ const BrowseCakesGallery: React.FC<BrowseCakesGalleryProps> = ({ cart, setCart }
     if (!cart.find(c => c.cakeId === cake.cakeId)) {
       setCart(prev => [...prev, cake]);
     }
-    setSelectedCake(cake); // open modal
+    setSelectedCake(cake); 
   };
 
-  // Keyword-based image mapping
+  
   const getCakeImage = (apiName?: string) => {
     if (!apiName) return cakeImages.default;
 

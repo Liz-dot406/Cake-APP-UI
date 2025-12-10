@@ -15,8 +15,15 @@ export const usersAPI = createApi({
   reducerPath: "usersAPI",
   baseQuery: fetchBaseQuery({
     baseUrl: ApiDomain,
-    prepareHeaders: (headers) => {
+    prepareHeaders: (headers, { getState }) => {
       headers.set("Content-Type", "application/json");
+
+     
+      const token = (getState() as any).auth?.token;
+      if (token) {
+        headers.set("Authorization", `Bearer ${token}`);
+      }
+
       return headers;
     },
   }),
@@ -28,7 +35,7 @@ export const usersAPI = createApi({
         method: "POST",
         body: newUser,
       }),
-      invalidatesTags: ["Users"], // fine here
+      invalidatesTags: ["Users"],
     }),
     verifyUser: builder.mutation<
       { message: string },
@@ -39,10 +46,10 @@ export const usersAPI = createApi({
         method: "POST",
         body: {
           email: data.email.trim().toLowerCase(),
-          code: data.verification_code,
+          verification_code: data.verification_code, 
         },
       }),
-      // DO NOT touch invalidatesTags here
+      
     }),
   }),
 });

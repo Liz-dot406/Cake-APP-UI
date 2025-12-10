@@ -29,7 +29,7 @@ const AdminDashboard = () => {
       <AdminNavbar handleDrawerToggle={handleDrawerToggle} drawerOpen={drawerOpen} />
 
       <div className="flex">
-        {/* Sidebar */}
+      
         <aside
           className={`fixed top-0 z-40 w-64 bg-pink-100 border-r border-pink-200 shadow-lg ${
             drawerOpen ? "" : "hidden"
@@ -47,7 +47,7 @@ const AdminDashboard = () => {
           </div>
         </aside>
 
-        {/* Main Content */}
+        
         <main className="flex-1 p-6 bg-gray-100 min-h-screen">
           <Outlet />
         </main>

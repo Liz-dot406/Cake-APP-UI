@@ -18,7 +18,7 @@ export const CustomerDrawer = () => {
                 className="flex items-center space-x-3 p-4 text-rose-700 font-medium hover:bg-amber-100 hover:text-rose-900 border-l-4 border-transparent hover:border-amber-400 transition-all duration-300 ease-in-out"
               >
                 <span className="text-xl">
-                  <Icon /> {/* Render the icon */}
+                  <Icon /> 
                 </span>
                 <span className="text-lg">{item.name}</span>
               </Link>
