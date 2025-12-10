@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import cake1 from "../../assets/images/choco.jpg";
 import cake2 from "../../assets/images/vanillabliss.jpg";
 import cake3 from "../../assets/images/ck2.jpg";
 import cake4 from "../../assets/images/strawberry.jpg";
 
 export const Cakes = () => {
+  const navigate = useNavigate();
+
   const cakes = [
     { id: 1, name: "Chocolate Dream", price: "KSh 2,000", image: cake1 },
     { id: 2, name: "Vanilla Bliss", price: "KSh 1,800", image: cake2 },
@@ -11,11 +14,15 @@ export const Cakes = () => {
     { id: 4, name: "Strawberry Delight", price: "KSh 1,900", image: cake4 },
   ];
 
+  
+  const handleAddToCart = (cake: any) => {
+    
+
+    navigate("/customer/dashboard/orders"); 
+  };
+
   return (
-    <section
-      id="cakes"
-      className="min-h-screen bg-pink-50 py-20 px-6 lg:px-20"
-    >
+    <section id="cakes" className="min-h-screen bg-pink-50 py-20 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-10">
         
         <div className="text-center mb-12">
@@ -25,7 +32,6 @@ export const Cakes = () => {
           </p>
         </div>
 
-      
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {cakes.map((cake) => (
             <div
@@ -43,7 +49,10 @@ export const Cakes = () => {
                 <h2 className="card-title text-pink-800">{cake.name}</h2>
                 <p className="text-gray-600">{cake.price}</p>
                 <div className="card-actions mt-3">
-                  <button className="btn bg-pink-700 hover:bg-pink-800 text-white border-none rounded-full">
+                  <button
+                    onClick={() => handleAddToCart(cake)}
+                    className="btn bg-pink-700 hover:bg-pink-800 text-white border-none rounded-full"
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -51,6 +60,7 @@ export const Cakes = () => {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
